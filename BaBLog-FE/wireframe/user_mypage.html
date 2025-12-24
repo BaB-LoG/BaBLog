@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="light" lang="ko"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>프로필 수정 - 냠냠코치</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#A8D8C9",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#181A1B",
+                        "content-light": "#FFFFFF",
+                        "content-dark": "#202124",
+                        "text-light": "#343A40",
+                        "text-dark": "#E8EAED",
+                        "subtext-light": "#6C757D",
+                        "subtext-dark": "#9AA0A6",
+                        "border-light": "#EAEAEA",
+                        "border-dark": "#3C4043",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div class="flex h-full grow flex-row">
+        <aside class="flex-shrink-0 w-64 p-4 hidden md:block">
+            <div class="flex h-full flex-col">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3 px-3 py-2">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture of Yummy Coach" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPbg7opJHcTvANQTpGJpWonx-XINq8ws5Hg2-cfD0yAGuugp9gr9yqzb7pN5Kdzn5lbSVZFj0EBPOvU50OZ7Thxe3uv9XlPkRdxl9UxBLoJkjwdjZ1kbrKtRVMuvhGG69IOwcq8cpOJOETty-djOyONzDIIcmw9VdvcNvRFWmLco308tOYY0Ko94mrB3tYOGkSCFB77pq2MGjxMNI6bNtfjnz0o_CRL8RWyWPUWa3OrNnztoaFs4AVDEsEw5u8yHUwierZhfVidgQ");'></div>
+                        <div class="flex flex-col">
+                            <h1 class="text-text-light dark:text-text-dark text-base font-bold leading-normal">냠냠코치</h1>
+                            <p class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">다이어트 파트너</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2 mt-4">
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/20 transition-colors" href="#">
+                            <span class="material-symbols-outlined text-text-light dark:text-text-dark">dashboard</span>
+                            <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">대시보드</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/20 transition-colors" href="#">
+                            <span class="material-symbols-outlined text-text-light dark:text-text-dark">restaurant_menu</span>
+                            <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">식단 기록</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/20 transition-colors" href="#">
+                            <span class="material-symbols-outlined text-text-light dark:text-text-dark">fitness_center</span>
+                            <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">운동 기록</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/20 transition-colors" href="#">
+                            <span class="material-symbols-outlined text-text-light dark:text-text-dark">bar_chart</span>
+                            <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">통계</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20" href="#">
+                            <span class="material-symbols-outlined text-text-light dark:text-text-dark" style="font-variation-settings: 'FILL' 1;">settings</span>
+                            <p class="text-text-light dark:text-text-dark text-sm font-bold leading-normal">설정</p>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 p-4 md:p-8">
+            <div class="layout-content-container flex flex-col max-w-3xl mx-auto">
+                <div class="flex flex-wrap justify-between gap-3 mb-8">
+                    <div class="flex min-w-72 flex-col gap-2">
+                        <h1 class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-tighter">프로필 수정</h1>
+                        <p class="text-subtext-light dark:text-subtext-dark text-base font-normal leading-normal">개인 정보를 수정하고 목표 영양 섭취량을 설정하세요.</p>
+                    </div>
+                </div>
+                <div class="bg-content-light dark:bg-content-dark p-6 md:p-8 rounded-xl shadow-sm border border-border-light dark:border-border-dark">
+                    <form class="flex flex-col gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <label class="flex flex-col w-full">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">이름</p>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-subtext-light dark:placeholder:text-subtext-dark px-4 text-base font-normal leading-normal" value="김냠냠"/>
+                            </label>
+                            <label class="flex flex-col w-full">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">아이디 (이메일)</p>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-subtext-light dark:text-subtext-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light/50 dark:bg-background-dark/50 h-12 placeholder:text-subtext-light dark:placeholder:text-subtext-dark px-4 text-base font-normal leading-normal" readonly="" value="yummy@coach.com"/>
+                            </label>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <label class="flex flex-col w-full">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">새 비밀번호</p>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-subtext-light dark:placeholder:text-subtext-dark px-4 text-base font-normal leading-normal" placeholder="새로운 비밀번호를 입력하세요" type="password"/>
+                            </label>
+                            <label class="flex flex-col w-full">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">새 비밀번호 확인</p>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-subtext-light dark:placeholder:text-subtext-dark px-4 text-base font-normal leading-normal" placeholder="비밀번호를 다시 입력하세요" type="password"/>
+                            </label>
+                        </div>
+                        <hr class="border-border-light dark:border-border-dark my-2"/>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <label class="flex flex-col w-full">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">나이</p>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-subtext-light dark:placeholder:text-subtext-dark px-4 text-base font-normal leading-normal" type="number" value="28"/>
+                            </label>
+                            <div class="flex flex-col w-full">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">성별</p>
+                                <div class="flex gap-4 h-12 items-center">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input checked="" class="form-radio text-primary focus:ring-primary/50" name="gender" type="radio"/>
+                                        <span class="text-text-light dark:text-text-dark text-base">여성</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input class="form-radio text-primary focus:ring-primary/50" name="gender" type="radio"/>
+                                        <span class="text-text-light dark:text-text-dark text-base">남성</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <label class="flex flex-col w-full">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">신장 (cm)</p>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-subtext-light dark:placeholder:text-subtext-dark px-4 text-base font-normal leading-normal" type="number" value="165"/>
+                            </label>
+                            <label class="flex flex-col w-full">
+                                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">체중 (kg)</p>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-subtext-light dark:placeholder:text-subtext-dark px-4 text-base font-normal leading-normal" step="0.1" type="number" value="55.5"/>
+                            </label>
+                        </div>
+                        <div class="flex items-center gap-4 py-2">
+                            <hr class="flex-grow border-border-light dark:border-border-dark"/>
+                            <span class="text-primary font-bold bg-primary/10 px-3 py-1 rounded-full text-xs">AI 코치 추천</span>
+                            <hr class="flex-grow border-border-light dark:border-border-dark"/>
+                        </div>
+                        <div class="flex flex-col gap-5">
+                            <div class="flex flex-col gap-1">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">일일 권장 섭취량</h3>
+                                    <span class="cursor-pointer text-xs text-primary font-medium hover:underline">초기화 (재계산)</span>
+                                </div>
+                                <p class="text-subtext-light dark:text-subtext-dark text-sm font-normal">회원님의 신체 정보를 바탕으로 계산된 수치입니다. 목표에 맞게 직접 수정할 수 있습니다.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <label class="flex flex-col w-full">
+                                    <div class="flex items-baseline justify-between pb-2">
+                                        <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">칼로리 (kcal)</p>
+                                        <span class="text-[10px] text-primary/80 font-medium">활동 에너지</span>
+                                    </div>
+                                    <input class="form-input w-full rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-10 px-4 text-sm" type="number" value="1850"/>
+                                    <p class="text-xs text-subtext-light dark:text-subtext-dark mt-1">체중 유지 및 활동에 필요한 총 에너지입니다.</p>
+                                </label>
+                                <label class="flex flex-col w-full">
+                                    <div class="flex items-baseline justify-between pb-2">
+                                        <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">탄수화물 (g)</p>
+                                        <span class="text-[10px] text-primary/80 font-medium">주요 에너지원</span>
+                                    </div>
+                                    <input class="form-input w-full rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-10 px-4 text-sm" type="number" value="230"/>
+                                    <p class="text-xs text-subtext-light dark:text-subtext-dark mt-1">뇌와 근육의 에너지원으로 하루 열량의 50~60% 권장.</p>
+                                </label>
+                                <label class="flex flex-col w-full">
+                                    <div class="flex items-baseline justify-between pb-2">
+                                        <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">단백질 (g)</p>
+                                        <span class="text-[10px] text-primary/80 font-medium">근육 형성</span>
+                                    </div>
+                                    <input class="form-input w-full rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-10 px-4 text-sm" type="number" value="95"/>
+                                    <p class="text-xs text-subtext-light dark:text-subtext-dark mt-1">근육 생성 및 유지에 필수적이며 포만감을 줍니다.</p>
+                                </label>
+                                <label class="flex flex-col w-full">
+                                    <div class="flex items-baseline justify-between pb-2">
+                                        <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">지방 (g)</p>
+                                        <span class="text-[10px] text-primary/80 font-medium">에너지 저장</span>
+                                    </div>
+                                    <input class="form-input w-full rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-10 px-4 text-sm" type="number" value="55"/>
+                                    <p class="text-xs text-subtext-light dark:text-subtext-dark mt-1">세포막 구성 및 호르몬 생성에 필요한 필수 영양소.</p>
+                                </label>
+                                <label class="flex flex-col w-full">
+                                    <div class="flex items-baseline justify-between pb-2">
+                                        <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">포화 지방 (g)</p>
+                                        <span class="text-[10px] text-red-400 font-medium">섭취 주의</span>
+                                    </div>
+                                    <input class="form-input w-full rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-10 px-4 text-sm" type="number" value="15"/>
+                                    <p class="text-xs text-subtext-light dark:text-subtext-dark mt-1">과다 섭취 시 심혈관 질환 위험이 있으니 주의하세요.</p>
+                                </label>
+                                <label class="flex flex-col w-full">
+                                    <div class="flex items-baseline justify-between pb-2">
+                                        <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">트랜스 지방 (g)</p>
+                                        <span class="text-[10px] text-red-500 font-medium">섭취 제한</span>
+                                    </div>
+                                    <input class="form-input w-full rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-10 px-4 text-sm" type="number" value="0"/>
+                                    <p class="text-xs text-subtext-light dark:text-subtext-dark mt-1">건강에 해로우므로 가능한 섭취를 피하는 것이 좋습니다.</p>
+                                </label>
+                                <label class="flex flex-col w-full">
+                                    <div class="flex items-baseline justify-between pb-2">
+                                        <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">당류 (g)</p>
+                                        <span class="text-[10px] text-orange-400 font-medium">적정량 섭취</span>
+                                    </div>
+                                    <input class="form-input w-full rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-10 px-4 text-sm" type="number" value="45"/>
+                                    <p class="text-xs text-subtext-light dark:text-subtext-dark mt-1">가공식품의 첨가당은 하루 50g 이하 섭취를 권장합니다.</p>
+                                </label>
+                                <label class="flex flex-col w-full">
+                                    <div class="flex items-baseline justify-between pb-2">
+                                        <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">나트륨 (mg)</p>
+                                        <span class="text-[10px] text-orange-400 font-medium">혈압 관리</span>
+                                    </div>
+                                    <input class="form-input w-full rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-10 px-4 text-sm" type="number" value="2000"/>
+                                    <p class="text-xs text-subtext-light dark:text-subtext-dark mt-1">세계보건기구(WHO) 권장 하루 섭취량은 2000mg 미만입니다.</p>
+                                </label>
+                                <label class="flex flex-col w-full">
+                                    <div class="flex items-baseline justify-between pb-2">
+                                        <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">콜레스테롤 (mg)</p>
+                                        <span class="text-[10px] text-orange-400 font-medium">혈관 건강</span>
+                                    </div>
+                                    <input class="form-input w-full rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-10 px-4 text-sm" type="number" value="300"/>
+                                    <p class="text-xs text-subtext-light dark:text-subtext-dark mt-1">성인 하루 권장 섭취량은 300mg 이하입니다.</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex justify-end items-center gap-4 pt-6 mt-4 border-t border-border-light dark:border-border-dark">
+                            <button class="px-6 py-3 rounded-lg text-text-light dark:text-text-dark text-base font-semibold leading-normal bg-background-light dark:bg-content-dark border border-border-light dark:border-border-dark hover:bg-border-light/50 dark:hover:bg-border-dark/50 transition-colors" type="button">취소</button>
+                            <button class="px-6 py-3 rounded-lg text-[#23352d] text-base font-semibold leading-normal bg-primary hover:bg-opacity-90 transition-colors" type="submit">수정 완료</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+</body></html>

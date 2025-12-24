@@ -1,0 +1,47 @@
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
+    <div class="w-full max-w-lg rounded-xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col">
+        <div class="flex items-center justify-between p-6 border-b border-slate-200 dark:border-slate-800">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">음식 기록</h2>
+            <button class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="p-6 space-y-5 flex-1 overflow-y-auto">
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="food-name">음식 이름</label>
+                <div class="relative">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                    <input class="w-full h-11 pl-10 pr-4 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary text-slate-800 dark:text-slate-200" id="food-name" placeholder="예: 닭가슴살" type="text"/>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="food-amount">양</label>
+                    <input class="w-full h-11 px-4 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary text-slate-800 dark:text-slate-200" id="food-amount" placeholder="예: 1" type="number"/>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="food-unit">단위</label>
+                    <select class="w-full h-11 px-4 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary text-slate-800 dark:text-slate-200" id="food-unit">
+                        <option>그릇</option>
+                        <option>조각</option>
+                        <option>개</option>
+                        <option>g</option>
+                        <option>인분</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button class="flex w-full items-center justify-center h-11 px-6 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 text-sm font-bold">
+                    <span>칼로리 계산하기</span>
+                </button>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg text-center">
+                <p class="text-slate-600 dark:text-slate-400">계산된 칼로리가 여기에 표시됩니다.</p>
+            </div>
+        </div>
+        <div class="flex justify-end gap-3 p-6 border-t border-slate-200 dark:border-slate-800">
+            <button class="h-11 px-6 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 font-bold text-sm">취소</button>
+            <button class="h-11 px-6 rounded-lg bg-primary text-white hover:bg-primary/90 font-bold text-sm">제출</button>
+        </div>
+    </div>
+</div>

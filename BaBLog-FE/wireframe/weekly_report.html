@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>냠냠코치 - 주간 식단 평가</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#10B981", // Vivid Emerald
+                        "background-light": "#F3F4F6", // Cool Gray 100
+                        "background-dark": "#111827", // Gray 900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937", // Gray 800
+                        "accent-red": "#EF4444",
+                        "accent-orange": "#F59E0B",
+                        "accent-blue": "#3B82F6",
+                        "neutral-line": "#9CA3AF", // Gray 400 for neutral line
+                        "neutral-bar": "#D1D5DB", // Gray 300 for neutral bars
+                        "neutral-bar-dark": "#4B5563", // Gray 600 for dark mode neutral bars
+                    },
+                    fontFamily: {
+                        display: ['"Noto Sans KR"', "sans-serif"],
+                        sans: ['"Noto Sans KR"', "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 15px rgba(16, 185, 129, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300 min-h-screen p-4 md:p-8">
+<main class="max-w-7xl mx-auto space-y-8">
+    <header class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
+        <div>
+            <h1 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white tracking-tight flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-4xl">restaurant_menu</span>
+                이번 주 인사이트
+            </h1>
+            <p class="text-gray-500 dark:text-gray-400 mt-2 text-lg font-medium ml-1">12.15 ~ 12.21</p>
+        </div>
+        <a class="group flex items-center gap-1 text-primary hover:text-emerald-600 dark:hover:text-emerald-400 font-bold transition-all" href="#">
+            리포트 자세히
+            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+    </header>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="md:col-span-4 bg-card-light dark:bg-card-dark rounded-3xl p-6 shadow-soft hover:shadow-lg transition-shadow border-l-8 border-primary relative overflow-hidden group">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <span class="material-symbols-outlined text-8xl text-primary">analytics</span>
+            </div>
+            <h3 class="text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider text-sm mb-4">주간 점수</h3>
+            <div class="flex items-baseline gap-2">
+                <span class="text-6xl font-black text-gray-900 dark:text-white">35</span>
+                <span class="text-2xl font-bold text-gray-400">/ 100</span>
+            </div>
+            <div class="mt-4 inline-flex items-center gap-2 bg-red-100 dark:bg-red-900/30 text-accent-red px-4 py-2 rounded-full text-sm font-bold">
+                <span class="material-symbols-outlined text-base">warning</span>
+                집중 개선 필요
+            </div>
+        </div>
+        <div class="md:col-span-4 bg-card-light dark:bg-card-dark rounded-3xl p-6 shadow-soft hover:shadow-lg transition-shadow relative overflow-hidden">
+            <h3 class="text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider text-sm mb-4">일관성</h3>
+            <div class="flex items-end justify-between mb-4">
+                <div class="flex items-baseline gap-1">
+                    <span class="text-5xl font-black text-gray-900 dark:text-white">22</span>
+                    <span class="text-lg font-bold text-gray-500 dark:text-gray-400">점</span>
+                </div>
+                <span class="text-sm font-medium text-gray-400">꾸준함 지표</span>
+            </div>
+            <div class="flex gap-2">
+                <div class="h-3 w-full bg-primary rounded-full shadow-glow"></div>
+                <div class="h-3 w-full bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-3 w-full bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-3 w-full bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-3 w-full bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+            </div>
+        </div>
+        <div class="md:col-span-4 bg-card-light dark:bg-card-dark rounded-3xl p-6 shadow-soft hover:shadow-lg transition-shadow flex flex-col justify-center">
+            <h3 class="text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider text-sm mb-2 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">psychology</span> 패턴 요약
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
+                주중에는 저녁을 건너뛰며 <span class="text-accent-red font-bold">저열량·저단백</span>이 이어지고, 주말에 <span class="text-accent-red font-bold">과식</span>으로 에너지와 나트륨이 급등했습니다.
+            </p>
+        </div>
+    </div>
+    <section class="bg-card-light dark:bg-card-dark rounded-3xl p-6 md:p-8 shadow-soft">
+        <div class="flex flex-wrap justify-between items-end mb-8 gap-4">
+            <div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                    <span class="material-symbols-outlined text-gray-400">bar_chart</span> 주간 흐름
+                </h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 ml-1">이번 주 식단 건강도 변화 (점수)</p>
+            </div>
+            <div class="flex gap-4 text-xs font-bold">
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded-sm bg-neutral-bar dark:bg-neutral-bar-dark"></span> 보통
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded-sm bg-primary"></span> Best
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded-sm bg-accent-red"></span> Worst
+                </div>
+            </div>
+        </div>
+        <div class="relative w-full h-80">
+            <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-12 pl-8 pr-4">
+                <div class="border-b border-gray-100 dark:border-gray-700/30 w-full h-full border-dashed flex items-start"><span class="text-xs text-gray-300 dark:text-gray-600 -ml-8 -mt-2">100</span></div>
+                <div class="border-b border-gray-100 dark:border-gray-700/30 w-full h-full border-dashed flex items-start"><span class="text-xs text-gray-300 dark:text-gray-600 -ml-8 -mt-2">75</span></div>
+                <div class="border-b border-gray-100 dark:border-gray-700/30 w-full h-full border-dashed flex items-start"><span class="text-xs text-gray-300 dark:text-gray-600 -ml-8 -mt-2">50</span></div>
+                <div class="border-b border-gray-100 dark:border-gray-700/30 w-full h-full border-dashed flex items-start"><span class="text-xs text-gray-300 dark:text-gray-600 -ml-8 -mt-2">25</span></div>
+                <div class="border-b border-gray-100 dark:border-gray-700/30 w-full h-full border-dashed flex items-start"><span class="text-xs text-gray-300 dark:text-gray-600 -ml-8 -mt-2">0</span></div>
+            </div>
+            <div class="absolute inset-0 pb-12 pl-8 pr-4 flex items-end justify-between gap-2 md:gap-6">
+                <div class="relative flex flex-col items-center justify-end h-full w-full group cursor-pointer">
+                    <div class="w-full max-w-[40px] bg-neutral-bar dark:bg-neutral-bar-dark rounded-t-lg transition-all duration-300 group-hover:bg-gray-400 dark:group-hover:bg-gray-500" style="height: 45%;"></div>
+                    <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-xs px-2 py-1 rounded">45점</div>
+                </div>
+                <div class="relative flex flex-col items-center justify-end h-full w-full group cursor-pointer">
+                    <div class="w-full max-w-[40px] bg-neutral-bar dark:bg-neutral-bar-dark rounded-t-lg transition-all duration-300 group-hover:bg-gray-400 dark:group-hover:bg-gray-500" style="height: 52%;"></div>
+                    <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-xs px-2 py-1 rounded">52점</div>
+                </div>
+                <div class="relative flex flex-col items-center justify-end h-full w-full group cursor-pointer">
+                    <div class="w-full max-w-[40px] bg-neutral-bar dark:bg-neutral-bar-dark rounded-t-lg transition-all duration-300 group-hover:bg-gray-400 dark:group-hover:bg-gray-500" style="height: 55%;"></div>
+                    <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-xs px-2 py-1 rounded">55점</div>
+                </div>
+                <div class="relative flex flex-col items-center justify-end h-full w-full group cursor-pointer">
+                    <div class="w-full max-w-[40px] bg-neutral-bar dark:bg-neutral-bar-dark rounded-t-lg transition-all duration-300 group-hover:bg-gray-400 dark:group-hover:bg-gray-500" style="height: 65%;"></div>
+                    <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-xs px-2 py-1 rounded">65점</div>
+                </div>
+                <div class="relative flex flex-col items-center justify-end h-full w-full group cursor-pointer">
+                    <div class="absolute -top-8 bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider shadow-sm mb-1">Best</div>
+                    <div class="w-full max-w-[40px] bg-primary rounded-t-lg shadow-[0_0_15px_rgba(16,185,129,0.4)] transition-all duration-300 group-hover:brightness-110" style="height: 92%;"></div>
+                    <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white text-xs px-2 py-1 rounded font-bold">92점</div>
+                </div>
+                <div class="relative flex flex-col items-center justify-end h-full w-full group cursor-pointer">
+                    <div class="absolute -top-8 bg-accent-red/10 text-accent-red border border-accent-red/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider shadow-sm mb-1">Worst</div>
+                    <div class="w-full max-w-[40px] bg-accent-red rounded-t-lg shadow-[0_0_15px_rgba(239,68,68,0.4)] transition-all duration-300 group-hover:brightness-110" style="height: 25%;"></div>
+                    <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-accent-red text-white text-xs px-2 py-1 rounded font-bold">25점</div>
+                </div>
+                <div class="relative flex flex-col items-center justify-end h-full w-full group cursor-pointer">
+                    <div class="w-full max-w-[40px] bg-neutral-bar dark:bg-neutral-bar-dark rounded-t-lg transition-all duration-300 group-hover:bg-gray-400 dark:group-hover:bg-gray-500" style="height: 58%;"></div>
+                    <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-xs px-2 py-1 rounded">58점</div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 w-full pl-8 pr-4 flex justify-between pointer-events-none">
+                <div class="w-full text-center flex flex-col items-center">
+                    <span class="text-sm font-medium text-gray-500">월</span>
+                    <span class="text-[10px] text-gray-400 mt-0.5">12.15</span>
+                </div>
+                <div class="w-full text-center flex flex-col items-center">
+                    <span class="text-sm font-medium text-gray-500">화</span>
+                    <span class="text-[10px] text-gray-400 mt-0.5">12.16</span>
+                </div>
+                <div class="w-full text-center flex flex-col items-center">
+                    <span class="text-sm font-medium text-gray-500">수</span>
+                    <span class="text-[10px] text-gray-400 mt-0.5">12.17</span>
+                </div>
+                <div class="w-full text-center flex flex-col items-center">
+                    <span class="text-sm font-medium text-gray-500">목</span>
+                    <span class="text-[10px] text-gray-400 mt-0.5">12.18</span>
+                </div>
+                <div class="w-full text-center flex flex-col items-center">
+                    <span class="text-sm font-bold text-primary">금</span>
+                    <span class="text-[10px] text-primary/80 font-medium mt-0.5">12.19</span>
+                </div>
+                <div class="w-full text-center flex flex-col items-center">
+                    <span class="text-sm font-bold text-accent-red">토</span>
+                    <span class="text-[10px] text-accent-red/80 font-medium mt-0.5">12.20</span>
+                </div>
+                <div class="w-full text-center flex flex-col items-center">
+                    <span class="text-sm font-medium text-gray-500">일</span>
+                    <span class="text-[10px] text-gray-400 mt-0.5">12.21</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-emerald-50 dark:bg-emerald-900/20 border-2 border-primary/20 rounded-3xl p-6 md:p-8 relative overflow-hidden">
+            <div class="absolute -right-6 -top-6 text-primary/10">
+                <span class="material-symbols-outlined text-9xl">emoji_events</span>
+            </div>
+            <div class="relative z-10">
+                <div class="flex items-center gap-2 mb-3">
+<span class="bg-primary text-white p-1 rounded-lg">
+<span class="material-symbols-outlined text-lg block">thumb_up</span>
+</span>
+                    <h3 class="text-primary font-bold text-lg">Best Day · 12.19</h3>
+                </div>
+                <p class="text-gray-700 dark:text-emerald-100 font-medium leading-relaxed">
+                    트랜스지방과 콜레스테롤이 과식 하루를 제외하면 전반적으로 목표 이내로 관리됨
+                </p>
+            </div>
+        </div>
+        <div class="bg-red-50 dark:bg-red-900/20 border-2 border-accent-red/20 rounded-3xl p-6 md:p-8 relative overflow-hidden">
+            <div class="absolute -right-6 -top-6 text-accent-red/10">
+                <span class="material-symbols-outlined text-9xl">priority_high</span>
+            </div>
+            <div class="relative z-10">
+                <div class="flex items-center gap-2 mb-3">
+<span class="bg-accent-red text-white p-1 rounded-lg">
+<span class="material-symbols-outlined text-lg block">warning</span>
+</span>
+                    <h3 class="text-accent-red font-bold text-lg">Worst Day · 12.20</h3>
+                </div>
+                <p class="text-gray-700 dark:text-red-100 font-medium leading-relaxed">
+                    하루 1~2끼와 낮은 총열량 섭취가 지속되어 피로와 집중력 저하로 이어졌습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-card-light dark:bg-card-dark rounded-3xl p-6 shadow-soft">
+            <h3 class="text-gray-900 dark:text-white font-bold text-lg mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-gray-400">summarize</span> 주간 요약
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                이번 주는 대부분 목표 대비 열량과 단백질이 크게 부족했고, 토요일에 과식이 발생해 변동 폭이 컸습니다. 나트륨·포화지방은 과식 하루를 제외하면 대체로 관리되었으나, 끼니 수와 식품 다양성이 낮았습니다. 다음 주는 매일 3끼 규칙식과 끼니당 단백질 보강으로 안정적인 섭취를 만드는 것이 핵심입니다.
+            </p>
+        </div>
+        <div class="bg-card-light dark:bg-card-dark rounded-3xl p-6 shadow-soft border-t-4 border-gray-200 dark:border-gray-700">
+            <h3 class="text-gray-900 dark:text-white font-bold text-lg mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-gray-400">center_focus_strong</span> 다음 주 포커스
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                매일 3끼 규칙식과 끼니당 단백질 25~35g 확보, 나트륨 2000mg 이내 유지에 집중하세요.
+            </p>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-8">
+        <div class="bg-emerald-50/50 dark:bg-emerald-900/10 rounded-2xl p-6 border border-emerald-100 dark:border-emerald-800">
+            <h4 class="text-emerald-700 dark:text-emerald-400 font-bold mb-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">check_circle</span> 이번 주 잘한 점
+            </h4>
+            <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                트랜스지방과 콜레스테롤이 과식 하루를 제외하면 전반적으로 목표 이내로 관리됨
+            </p>
+        </div>
+        <div class="bg-amber-50/50 dark:bg-amber-900/10 rounded-2xl p-6 border border-amber-100 dark:border-amber-800">
+            <h4 class="text-amber-700 dark:text-amber-400 font-bold mb-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">build</span> 개선 포인트
+            </h4>
+            <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                하루 1~2끼와 낮은 총열량 섭취가 지속되어 피로와 집중력 저하로 이어졌습니다.
+            </p>
+        </div>
+        <div class="bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl p-6 border border-blue-100 dark:border-blue-800">
+            <h4 class="text-blue-700 dark:text-blue-400 font-bold mb-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">next_plan</span> 다음 주 행동
+            </h4>
+            <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                월~금 아침·점심·저녁/현미밥 1공기(210g)+단백질 식품 120g(닭가슴살·두부·계란)+채소 2컵/끼니당 600~700kcal로 구성하세요.
+            </p>
+        </div>
+    </div>
+</main>
+
+</body></html>

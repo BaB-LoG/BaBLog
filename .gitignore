@@ -1,0 +1,19 @@
+# Build outputs
+**/target/
+**/build/
+
+# IDE/editor
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Optional archives
+*.zip

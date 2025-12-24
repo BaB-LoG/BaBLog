@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 전역 디자인 토큰과 기본 배경/타이포 설정 */
+@layer base {
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined', sans-serif;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    min-width: 1280px;
+    overflow-x: hidden;
+  }
+
+  #app {
+    min-width: 1280px;
+  }
+
+  body {
+    @apply bg-background-light text-text-light font-sans antialiased;
+  }
+
+  .dark body {
+    @apply bg-background-dark text-text-dark;
+  }
+
+  a {
+    @apply text-text-light;
+  }
+
+  .dark a {
+    @apply text-text-dark;
+  }
+}
